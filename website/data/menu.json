@@ -1,0 +1,36 @@
+{
+ "_quelle": "Burger: Karte des Hauses (Foto vom Besitzer auf Google Maps, _Material/google-owner/owner-2.jpg). Beilagen und Getränke: travelgo.ph/menus/big-belly-siargao, «regular restaurant prices», abgerufen 22.11.2026. Siehe _Material/recherche.md.",
+ "burger": [
+  {"name": "3 Cheese", "zutaten": "Gorgonzola, melted brie, melted cheddar, browned onion", "preise": [["Wagyu", 650, "wagyu"], ["Pork", 550, "pork"], ["Unmeat", 550, "unmeat"]]},
+  {"name": "Big Marc", "zutaten": "Melted cheddar, shredded lettuce, onion & pickles, Big Marc sauce", "preise": [["Wagyu", 480, "wagyu"], ["Pork", 380, "pork"], ["Unmeat", 380, "unmeat"]]},
+  {"name": "Deluxe", "zutaten": "Melted brie, braised shiitake, browned onion, truffle mayo", "preise": [["Wagyu", 560, "wagyu"], ["Pork", 460, "pork"], ["Unmeat", 460, "unmeat"]]},
+  {"name": "Smash", "zutaten": "Melted cheddar, browned onion, zucchini pickles, burger sauce", "spalten": ["Single", "Twin"], "preise": [["Wagyu", [380, 480], "wagyu"], ["Pork", [280, 380], "pork"], ["One of each", [null, 420], "wagyu pork"]]},
+  {"name": "B.B.King", "zutaten": "Melted cheddar, browned onion, cured bacon, zucchini pickles, barbeque sauce", "preise": [["Wagyu", 580, "wagyu"], ["Pork", 480, "pork"], ["Fried chicken", 480, "chicken"]]},
+  {"name": "Classic", "zutaten": "Melted cheddar, browned onion, zucchini pickles, burger sauce", "preise": [["Wagyu", 480, "wagyu"], ["Pork", 380, "pork"], ["Unmeat", 380, "unmeat"]]},
+  {"name": "Dorado", "zutaten": "Beer batter fish, shredded lettuce, onion & pickles, tartar sauce", "preise": [["Burger", 380, "fish"], ["Add cheddar", 40, "extra"]]},
+  {"name": "Chorizo", "zutaten": "Chorizo crust, melted cheddar, browned onion, alioli sauce", "preise": [["Single", 280, "pork"], ["Twin", 380, "pork"]]},
+  {"name": "Pollos Hermanos", "zutaten": "Fried chicken leg, shredded lettuce, onion & pickles, Pollos sauce", "preise": [["Burger", 380, "chicken"], ["Add cheddar", 40, "extra"]]}
+ ],
+ "beilagen": [
+  {"name": "Chori Fries", "zutaten": "French fries, melted cheddar, chorizo rain, hot chimichurri", "preis": 340},
+  {"name": "NY Fries", "zutaten": "French fries, melted cheddar, cured bacon, ranch sauce", "preis": 340},
+  {"name": "Truffle Fries", "zutaten": "French fries, braised shiitake, browned onion, truffle mayo", "preis": 340},
+  {"name": "Java Nuggets", "zutaten": "Sliced fresh tempeh, spiced tempura, sambal dip", "preis": 220},
+  {"name": "Hot Papas", "zutaten": "Thick potato fries, hot chimichurri, allioli sauce", "preis": 220},
+  {"name": "Cheesy Fries", "zutaten": "French fries, melted cheddar, browned onion", "preis": 260},
+  {"name": "Mozza Sticks", "zutaten": "Breaded mozzarella sticks, barbeque dip and ranch dip", "preis": 260},
+  {"name": "Chicken Nuggets", "zutaten": "Fried chicken leg chunks, barbeque and ranch dip", "preis": 260},
+  {"name": "Fries, plate", "zutaten": "Potato fries with ketchup dip", "preis": 200},
+  {"name": "Fries, side", "zutaten": "Potato fries with ketchup dip", "preis": 80}
+ ],
+ "getraenke": [
+  {"name": "Mango Slush", "preis": "160"},
+  {"name": "Pineapple Slush", "preis": "160"},
+  {"name": "Lemonade", "preis": "100"},
+  {"name": "Iced Tea", "preis": "100"},
+  {"name": "Milkshake", "zusatz": "Vanilla or cookies & cream", "preis": "180–240"},
+  {"name": "Kraft Beer", "zusatz": "Ask for today's options", "preis": "200"},
+  {"name": "Lokal Beer", "preis": "100"},
+  {"name": "Soft Drink", "preis": "100"}
+ ]
+}
