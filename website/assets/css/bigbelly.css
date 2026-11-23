@@ -1293,17 +1293,23 @@ body{background:transparent}
 @keyframes fu-zu-l{to{clip-path:inset(-40px 0 -40px -40px)}}
 @keyframes fu-zu-r{to{clip-path:inset(-40px -40px -40px 0)}}
 @media (prefers-reduced-motion:reduce){.js .fu__linie i{clip-path:none!important;animation:none!important}}
-/* Einflug nach Bareiss-Vorlage (Robert 23.11.2026): jedes Foto gleitet einzeln hoch und zoomt im Rahmen */
-.js [data-r]{transform:translateY(clamp(64px,6.2vw,96px));transition:transform 1.6s cubic-bezier(.16,1,.3,1);transition-delay:calc(var(--i,0) * 90ms)}
+/* Reinschweben wie CEV Siargao (Vorlage Bareiss, Robert 23.11.2026 «so wie bei CEV»): jedes Stück startet 12 % vor dem unteren Rand mit fertig geladenem Bild,
+   gleitet 64–96 px hoch (Bilder dazu .975 → 1), Foto zoomt im Rahmen 1,13 → 1,04; am Handy genauso */
+:root{--ein:cubic-bezier(.16,1,.3,1)}
+.js [data-r]{transform:translate3d(0,clamp(64px,6.2vw,96px),0);transition:transform 1.6s var(--ein);transition-delay:calc(var(--i,0) * 90ms)}
+.js .bild[data-r],.js [data-r]:has(>img),.js [data-r]:has(>.bild){transform:translate3d(0,clamp(64px,6.2vw,96px),0) scale(.975);transform-origin:50% 100%}
 .js [data-r].da{transform:none}
-.js .bild:not([data-r]){translate:0 clamp(64px,6.2vw,96px);scale:.975;transition:translate 1.6s cubic-bezier(.16,1,.3,1),scale 1.6s cubic-bezier(.16,1,.3,1)}
+.js .bild:not([data-r]){translate:0 clamp(64px,6.2vw,96px) 0;scale:.975;transform-origin:50% 100%;transition:translate 1.6s var(--ein),scale 1.6s var(--ein)}
 .js .bild.da{translate:none;scale:none}
 .js [data-r] .bild,.js .seitenkopf .bild,.js .schild .bild,.js .sk .bild,.js .m2 .bild,.js .bild[class*="__grund"]{translate:none;scale:none}
+.bild img{transform:scale(1.13);transition:transform 2.2s var(--ein)}
+.bild.da img,.da .bild img{transform:scale(1.04)}
+[data-schlitz] .zi{transition:transform 1.3s var(--ein);transition-delay:calc(var(--z,0) * 95ms + var(--sv,0ms))}
 /* Bildleiste: die Fotos schweben nacheinander von links nach rechts herein */
 .js .bb[data-r]{transform:none}
-.js .bb .bb__bild{transform:translateY(clamp(64px,6.2vw,96px)) scale(.975);transition:transform 1.6s cubic-bezier(.16,1,.3,1);transition-delay:calc(var(--i,0) * 120ms)}
+.js .bb .bb__bild{transform:translate3d(0,clamp(64px,6.2vw,96px),0) scale(.975);transform-origin:50% 100%;transition:transform 1.6s var(--ein);transition-delay:calc(var(--i,0) * 120ms)}
 .js .bb.da .bb__bild{transform:none}
-.bb__bild img{transform:scale(1.13);transition:transform 2s cubic-bezier(.16,1,.3,1);transition-delay:calc(var(--i,0) * 120ms)}
+.bb__bild img{transform:scale(1.13);transition:transform 2.2s var(--ein);transition-delay:calc(var(--i,0) * 120ms)}
 .bb.da .bb__bild img{transform:scale(1.04)}
 /* Shack: Kacheln und Bild heben sich vom Untergrund ab */
 .prot__zeile,.prot__raster>.bild{box-shadow:inset 0 1px 0 rgba(255,255,255,.08),0 2px 4px rgba(60,30,0,.18),0 14px 28px -10px rgba(60,30,0,.4),0 34px 60px -28px rgba(60,30,0,.45)}
@@ -1319,15 +1325,7 @@ body{background:transparent}
 .abend__raster .hu__mit .bild{height:100%;aspect-ratio:auto}
 @media (max-width:900px){.abend__raster{grid-template-columns:1fr 1fr}.abend__raster>.abend__gross{grid-row:auto;grid-column:1/3}.abend__raster .hu__mit .bild{aspect-ratio:4/5;height:auto}.abend__tafel{grid-column:1/3}}
 @media (prefers-reduced-motion:reduce){.js .bild,.js .bb .bb__bild,.bb__bild img{translate:none!important;scale:none!important;transform:none!important;transition:none!important}}
-/* Handy (Robert 23.11.2026: «viel zu wackelig … flackert»): ein ruhiger Einflug, kein Zoom, keine Dauer-Ebenen */
-@media (max-width:900px){
-  .bild img,.bild.da img,.da .bild img,.bild:hover img,.bb__bild img,.bb.da .bb__bild img{transform:none!important;transition:none!important}
-  .js [data-r]{transform:translateY(36px);transition:transform 1.1s cubic-bezier(.16,1,.3,1);transition-delay:calc(min(var(--i,0),3) * 80ms)}
-  .js .bild:not([data-r]){translate:0 36px;scale:none;transition:translate 1.1s cubic-bezier(.16,1,.3,1)}
-  .js .bb .bb__bild{transform:translateY(36px);transition:transform 1.1s cubic-bezier(.16,1,.3,1);transition-delay:calc(min(var(--i,0),3) * 90ms)}
-  [data-schlitz] .zi{transition-duration:.8s}
-  .tafel__glut{display:none!important}
-}
+@media (max-width:900px){.tafel__glut{display:none!important}}
 .lauf-ruht{animation-play-state:paused!important}
 @media (max-width:900px){.js .sd-drinks--v08 .bild{translate:none}}
 @media (max-width:900px){.sd-drinks--v08 .sd__halbl{padding-bottom:64px}}
