@@ -199,3 +199,12 @@
     window.addEventListener('resize', pruef, { passive: true });
   });
 })();
+
+/* Laufbänder laufen nur, solange sie im Bild sind (Handy: weniger Arbeit beim Scrollen) */
+(function () {
+  if (!('IntersectionObserver' in window)) return;
+  var l = document.querySelectorAll('.strom__lauf,.schild__lauf,.band__lauf,.bb__lauf,.sk__bandlauf,.m2band__lauf');
+  if (!l.length) return;
+  var io = new IntersectionObserver(function (es) { es.forEach(function (e) { e.target._lauf.classList.toggle('lauf-ruht', !e.isIntersecting); }); }, { rootMargin: '20% 0px 20% 0px' });
+  [].forEach.call(l, function (x) { var h = x.parentElement || x; h._lauf = x; io.observe(h); });
+})();
