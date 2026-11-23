@@ -1329,3 +1329,11 @@ body{background:transparent}
 .lauf-ruht{animation-play-state:paused!important}
 @media (max-width:900px){.js .sd-drinks--v08 .bild{translate:none}}
 @media (max-width:900px){.sd-drinks--v08 .sd__halbl{padding-bottom:64px}}
+/* Handy (Robert 23.11.2026 «das alle mittig»): Wege-Karten auf Visit und Fussspalten mittig */
+@media (max-width:900px){
+  .weg{align-items:center;text-align:center}
+  .fu__drei--mittig>div,.fu__drei>.fuss__spalte{justify-self:center;text-align:center}
+  .fuss__studie{text-align:center}
+}
+/* Laufbänder: eine feste Ebene je Band, damit Safari beim Laufen nicht neu zeichnet */
+.strom__lauf,.band__lauf,.bb__lauf,.sk__bandlauf,.m2band__lauf,.schild__lauf{will-change:transform;-webkit-backface-visibility:hidden;backface-visibility:hidden}
