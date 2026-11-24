@@ -105,7 +105,8 @@
     var vor = new IntersectionObserver(function (es) {
       es.forEach(function (e) { if (!e.isIntersecting) return; vor.unobserve(e.target); e.target.loading = 'eager'; if (e.target.decode) e.target.decode().catch(function () {}); });
     }, { rootMargin: '0px 0px 150% 0px' });
-    D.querySelectorAll('img[loading=lazy]').forEach(function (i) { vor.observe(i); });
+    /* 24.11.2026 flüssig: nach dem ersten Bild laden alle Bilder der Seite der Reihe nach, nicht erst kurz vor dem Rand */
+    D.querySelectorAll('img[loading=lazy]').forEach(function (i) { i.loading = 'eager'; });
     /* wie CEV/Bareiss: Auftritt 12 % vor dem unteren Rand, erst mit geladenem und entpacktem Bild (höchstens 2,5 s); schon vorbeigescrollte Stücke sofort */
     function bereit(el, dann) {
       var ims = [].filter.call(el.tagName === 'IMG' ? [el] : el.querySelectorAll('img'), function (im) { return im.offsetParent !== null; });
@@ -117,7 +118,7 @@
         if (im.complete && im.naturalWidth > 1) return ent();
         im.loading = 'eager'; im.addEventListener('load', ent, { once: true }); im.addEventListener('error', eins, { once: true });
       });
-      setTimeout(fertig, 2500);
+      setTimeout(fertig, 8000);
     }
     var io = new IntersectionObserver(function (es) {
       es.forEach(function (e) {
