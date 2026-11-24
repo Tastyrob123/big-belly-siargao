@@ -35,7 +35,7 @@ html.js.laed body{animation:notauf 0s 4s forwards}
 /* ---------- Leiste ---------- */
 .leiste{position:fixed;z-index:50;left:0;right:0;top:0;padding:14px var(--rand);transition:transform .55s var(--e1);pointer-events:none}
 .leiste>*{pointer-events:auto}
-.leiste.weg{transform:translateY(-120%)}
+.leiste.leiste--weg{transform:translateY(-120%)}
 .leiste__in{display:flex;align-items:center;justify-content:space-between;gap:24px;max-width:var(--max);margin:0 auto;padding:8px 8px 8px 20px;border-radius:999px;background:rgba(12,10,14,.92);box-shadow:0 0 0 1px rgba(255,255,255,.08),0 18px 34px -22px rgba(0,0,0,.9)}
 .leiste__logo{display:block;width:104px;flex:none}
 .leiste__logo img,.fuss__logo img{width:100%;height:auto}

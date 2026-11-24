@@ -134,7 +134,7 @@
   addEventListener('scroll', function () {
     if (tick) return; tick = requestAnimationFrame(function () {
       tick = 0; var y = scrollY;
-      if (leiste && !leiste.classList.contains('auf')) leiste.classList.toggle('weg', y > alt && y > 160);
+      if (leiste && !leiste.classList.contains('auf')) leiste.classList.toggle('leiste--weg', y > alt && y > 160);
       alt = y;
     });
   }, { passive: true });
